@@ -877,6 +877,41 @@
       });
     }, { threshold: 0.3 }).observe(document.getElementById('ventajas'));
 
+    /* ── FALLBACK DE IMAGENES (GITHUB) ─────────────────────── */
+    (() => {
+      const extCandidates = [".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".webp"];
+      const buildCandidates = (src) => {
+        const list = [];
+        const clean = src.replace(/^\.\//, "");
+        list.push(src);
+        list.push("./" + clean);
+        list.push(clean);
+        if (clean.includes(" ")) list.push(clean.replace(/ /g, "%20"));
+        if (clean.includes("%20")) list.push(clean.replace(/%20/g, " "));
+        const match = clean.match(/^(.*)\.[^.]+$/);
+        if (match) extCandidates.forEach((ext) => list.push(match[1] + ext));
+        return [...new Set(list)];
+      };
+
+      document.querySelectorAll("img[src]").forEach((img) => {
+        const src = img.getAttribute("src") || "";
+        if (!/imagen\/|Empresas/.test(src)) return;
+        const candidates = buildCandidates(src);
+        let i = 0;
+
+        const tryNext = () => {
+          while (i < candidates.length && candidates[i] === img.getAttribute("src")) i++;
+          if (i < candidates.length) {
+            img.src = candidates[i];
+            i++;
+          }
+        };
+
+        img.addEventListener("error", tryNext);
+        if (img.complete && img.naturalWidth === 0) tryNext();
+      });
+    })();
+
   </script>
 </body>
 </html>
