@@ -236,7 +236,7 @@
       border-radius: 4px;
     }
     .partner-logo-box img {
-      width: min(220px, 100%); max-height: 48px;
+      width: min(253px, 100%); max-height: 55px;
       object-fit: contain; display: block;
       opacity: 0.95; filter: none;
     }
@@ -413,15 +413,14 @@
         <a href="#plan"       data-nav="plan">Plan</a>
         <a href="#resultados" data-nav="resultados">Resultados</a>
         <a href="#contacto"   data-nav="contacto">Contacto</a>
-       </div>
-          <div class="scroll-indicator" aria-hidden="true"></div>
+      </div>
     </div>
   </nav>
 
   <!-- HERO -->
   <header class="hero" id="inicio">
     <div class="hero-media" aria-hidden="true">
-      <img src="./imagen/1.jpg" alt="" />
+      <img src="imagen/1.jpg" alt="" />
     </div>
     <div class="hero-inner">
       <div class="decor-line" aria-hidden="true"></div>
@@ -432,6 +431,8 @@
         <a class="btn btn-primary" href="#problema">Conocer el modelo</a>
         <a class="btn btn-text"    href="#contacto">Contactar</a>
       </div>
+      <div class="scroll-indicator" aria-hidden="true"></div>
+    </div>
   </header>
 
   <main>
@@ -457,7 +458,7 @@
         </header>
         <p class="pull-quote">"Gestión centralizada que optimiza, transparenta y valoriza cada peso invertido en tu condominio."</p>
         <figure class="image-band">
-          <img src="./imagen/2.jpg" alt="Desarrollo residencial de alta gama" />
+          <img src="imagen/2.jpg" alt="Desarrollo residencial de alta gama" />
         </figure>
         <div class="vision-mission">
           <article class="vm-block">
@@ -562,18 +563,17 @@
         <div class="partners-inline">
           <p class="partners-inline-label">Empresas certificadas · Respaldo técnico</p>
           <div class="partner-grid">
-            <a class="partner-card" href="https://innovarq.mx/" target="_blank" rel="noopener noreferrer">
+            <article class="partner-card">
               <div class="partner-logo-box">
-                <img src="./3%20Empresas%20Filiales/InnovArq.png" alt="InnovArq" class="logo-dark" />
+                <img src="3 Empresas Filiales/InnovArq.png" alt="InnovArq" class="logo-dark" />
               </div>
               <span class="partner-badge">Gerencia · Gestión integral</span>
               <p class="partner-name">InnovArq</p>
               <p class="partner-desc">Entidad gestora y gerente principal del proyecto EGIC. Responsable de la dirección estratégica, coordinación de todos los departamentos y cumplimiento operativo, financiero y legal del modelo.</p>
-              <span class="partner-link">Visitar sitio ↗</span>
-            </a>
+            </article>
             <a class="partner-card" href="https://seformex.mx/" target="_blank" rel="noopener noreferrer">
               <div class="partner-logo-box">
-                <img src="./3%20Empresas%20Filiales/FORMEX.png" alt="FORMEX" class="logo-light" />
+                <img src="3 Empresas Filiales/FORMEX.png" alt="FORMEX" class="logo-light" />
               </div>
               <span class="partner-badge">Seguridad · Operativa</span>
               <p class="partner-name">FORMEX Servicios Estratégicos</p>
@@ -582,7 +582,7 @@
             </a>
             <a class="partner-card" href="https://encer.mx/" target="_blank" rel="noopener noreferrer">
               <div class="partner-logo-box">
-                <img src="./3%20Empresas%20Filiales/ENCER.png" alt="ENCER" class="logo-black" />
+                <img src="3 Empresas Filiales/ENCER.png" alt="ENCER" class="logo-black" />
               </div>
               <span class="partner-badge">Seguridad · Sistemas</span>
               <p class="partner-name">ENCER</p>
@@ -710,7 +710,7 @@
         <div class="modal-divider"></div>
         <p style="color:var(--gold-muted);font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500;margin-bottom:14px;">EL MODELO EN ACCIÓN</p>
         <figure style="margin-bottom:16px;border:1px solid var(--border-gold);overflow:hidden;">
-          <img src="./imagen/4.jpg" alt="Complejo residencial" style="width:100%;height:160px;object-fit:cover;display:block;" />
+          <img src="imagen/4.jpg" alt="Complejo residencial" style="width:100%;height:160px;object-fit:cover;display:block;" />
         </figure>
         <div class="case-grid">
           <article class="case-card">
@@ -770,7 +770,7 @@
           </article>
         </div>
         <figure style="margin-top:24px;border:1px solid var(--border-gold);overflow:hidden;">
-          <img src="./imagen/3.jpg" alt="Mesa de trabajo" style="width:100%;height:160px;object-fit:cover;display:block;" />
+          <img src="imagen/3.jpg" alt="Mesa de trabajo" style="width:100%;height:160px;object-fit:cover;display:block;" />
         </figure>`,
 
       indicadores: `
@@ -874,41 +874,6 @@
         }
       });
     }, { threshold: 0.3 }).observe(document.getElementById('ventajas'));
-
-    /* ── FALLBACK DE IMAGENES (GITHUB) ─────────────────────── */
-    (() => {
-      const extCandidates = [".jpg", ".JPG", ".jpeg", ".JPEG", ".png", ".webp"];
-      const buildCandidates = (src) => {
-        const list = [];
-        const clean = src.replace(/^\.\//, "");
-        list.push(src);
-        list.push("./" + clean);
-        list.push(clean);
-        if (clean.includes(" ")) list.push(clean.replace(/ /g, "%20"));
-        if (clean.includes("%20")) list.push(clean.replace(/%20/g, " "));
-        const match = clean.match(/^(.*)\.[^.]+$/);
-        if (match) extCandidates.forEach((ext) => list.push(match[1] + ext));
-        return [...new Set(list)];
-      };
-
-      document.querySelectorAll("img[src]").forEach((img) => {
-        const src = img.getAttribute("src") || "";
-        if (!/imagen\/|Empresas/.test(src)) return;
-        const candidates = buildCandidates(src);
-        let i = 0;
-
-        const tryNext = () => {
-          while (i < candidates.length && candidates[i] === img.getAttribute("src")) i++;
-          if (i < candidates.length) {
-            img.src = candidates[i];
-            i++;
-          }
-        };
-
-        img.addEventListener("error", tryNext);
-        if (img.complete && img.naturalWidth === 0) tryNext();
-      });
-    })();
 
   </script>
 </body>
