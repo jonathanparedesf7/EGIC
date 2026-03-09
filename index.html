@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="es-MX">
 <head>
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-66TV4ZXP1Q"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-66TV4ZXP1Q');
+</script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Propuesta ejecutiva de la Estrategia de Gestión Integral Condominal (EGIC) para desarrollos inmobiliarios en Yucatán y Campeche." />
@@ -82,6 +91,62 @@
       transition: color 0.3s; display: inline-flex; align-items: center; gap: 6px;
     }
     .btn-detail:hover { color: var(--gold-bright); }
+    .btn-whatsapp {
+      background: #25D366;
+      border: 1px solid #25D366;
+      color: #0A0A0A;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-size: 15px;
+      letter-spacing: 1px;
+      font-weight: 500;
+      box-shadow: 0 8px 24px rgba(37,211,102,0.25);
+    }
+    .btn-whatsapp:hover, .btn-whatsapp:focus-visible {
+      background: #2be16f;
+      border-color: #2be16f;
+      color: #0A0A0A;
+      box-shadow: 0 10px 28px rgba(37,211,102,0.35);
+      outline: none;
+    }
+    .hero-trust-line {
+      margin-top: 6px;
+      color: var(--gray-light);
+      font-size: 14px;
+      font-weight: 300;
+      letter-spacing: 0.2px;
+    }
+
+    /* ─── WHATSAPP FLOTANTE ───────────────────────────────── */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 3000;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: #25D366;
+      color: #0A0A0A;
+      border: 1px solid #25D366;
+      border-radius: 999px;
+      min-height: 52px;
+      padding: 0 18px;
+      font-family: "Lato", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.24);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+    }
+    .whatsapp-float:hover, .whatsapp-float:focus-visible {
+      background: #2be16f;
+      border-color: #2be16f;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0,0,0,0.28);
+      outline: none;
+    }
 
     /* ─── NAVBAR ────────────────────────────────────────────── */
     .site-nav {
@@ -196,6 +261,7 @@
     .kpi-star-metric { display: block; font-family: "Cormorant Garamond", serif; font-size: clamp(32px, 5.5vw, 48px); color: var(--gold-primary); font-weight: 300; line-height: 1; margin-bottom: 6px; }
     .kpi-star-label  { color: var(--gray-light); font-size: 14px; font-weight: 300; }
     #resultados { background: var(--black-deep); }
+    #resultados h2 { color: var(--white-pure); }
     #resultados .kpi-star { background: var(--black-mid); }
     #resultados .kpi-star-label { color: var(--gray-mid); }
 
@@ -291,12 +357,76 @@
       font-size: 28px;
       line-height: 1.05;
       color: var(--white-pure);
-      margin-bottom: 4px;
+      margin-bottom: 10px;
+    }
+    .contact-direct-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      background: var(--gold-primary);
+      color: var(--black-deep);
+      border: 1px solid var(--gold-primary);
+      border-radius: 999px;
+      padding: 12px 26px;
+      font-family: "Lato", sans-serif;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: 0.6px;
+      margin: 0 auto 10px;
+      box-shadow: 0 8px 22px rgba(201,168,76,0.3);
+      transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+    }
+    .contact-direct-cta:hover,
+    .contact-direct-cta:focus-visible {
+      background: var(--gold-bright);
+      border-color: var(--gold-bright);
+      color: var(--black-deep);
+      box-shadow: 0 10px 26px rgba(226,192,104,0.4);
+      transform: translateY(-1px);
+      outline: none;
+    }
+    .btn-gold {
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-gold::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -120%;
+      width: 60%;
+      height: 100%;
+      background: linear-gradient(
+        120deg,
+        transparent,
+        rgba(255,255,255,0.6),
+        transparent
+      );
+      transform: skewX(-20deg);
+      animation: goldShimmer 3.5s infinite;
+      pointer-events: none;
+    }
+    @keyframes goldShimmer {
+      0% {
+        left: -120%;
+      }
+      60% {
+        left: 120%;
+      }
+      100% {
+        left: 120%;
+      }
+    }
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+      transition: all 0.25s ease;
     }
     .contact-direct-role {
       color: var(--gray-light);
       font-size: 14px;
-      margin-bottom: 8px;
+      margin-bottom: 10px;
       font-weight: 300;
     }
     .contact-direct-phone {
@@ -304,6 +434,20 @@
       font-size: 20px;
       letter-spacing: 1px;
       font-weight: 400;
+      text-decoration: none;
+      display: inline-block;
+      margin-bottom: 10px;
+      transition: color 0.25s ease;
+    }
+    .contact-direct-phone:hover,
+    .contact-direct-phone:focus-visible {
+      color: var(--gold-shimmer);
+      outline: none;
+    }
+    .contact-direct-trust {
+      color: var(--gray-light);
+      font-size: 13px;
+      font-weight: 300;
     }
     .author-line{ margin-top: 24px; color: var(--gray-mid); font-size: 13px; font-weight: 300; }
     .contact-form {
@@ -524,6 +668,8 @@
       .contact-direct { padding: 14px 12px; margin-bottom: 18px; }
       .contact-direct-name { font-size: 24px; }
       .contact-direct-phone { font-size: 18px; }
+      .contact-direct-cta { width: 100%; max-width: 300px; }
+      .contact-direct-trust { font-size: 12px; }
       .author-line { font-size: 13px; }
       .contact-form { width: 100%; gap: 12px; }
       .contact-grid { gap: 10px; }
@@ -550,6 +696,18 @@
       .cta-block .btn-primary:hover {
         border-color: var(--gold-shimmer); color: var(--gold-shimmer);
         box-shadow: 0 0 28px rgba(240,208,128,0.4);
+      }
+      .btn-whatsapp {
+        width: 100%;
+        max-width: 320px;
+      }
+      .hero-trust-line { font-size: 13px; }
+      .whatsapp-float {
+        right: 12px;
+        bottom: 12px;
+        min-height: 48px;
+        padding: 0 14px;
+        font-size: 13px;
       }
       #modal-panel { padding: 40px 18px 32px; }
     }
@@ -588,8 +746,16 @@
       <p class="hero-sub">Estrategia de Gestión Integral Condominal · Yucatán, México</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="#problema">Conocer el modelo</a>
+        <a
+          class="btn btn-whatsapp"
+          href="https://wa.me/5219992644945?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20tu%20servicio"
+          target="_blank"
+          rel="noopener noreferrer"
+          onclick="if(window.gtag){gtag('event','whatsapp_click');}"
+        >Hablar por WhatsApp</a>
         <a class="btn btn-text"    href="#contacto">Contactar</a>
       </div>
+      <p class="hero-trust-line">Consulta gratuita — respuesta en menos de 24 horas</p>
       <div class="scroll-indicator" aria-hidden="true"></div>
     </div>
   </header>
@@ -759,38 +925,35 @@
           <div class="contact-direct" aria-label="Contacto directo">
             <p class="contact-direct-title">Prefieres contacto directo</p>
             <p class="contact-direct-name">Jonathan P.</p>
+            <a
+              class="contact-direct-cta btn-gold"
+              href="https://wa.me/5219992644945?text=Hola%20quiero%20información%20sobre%20su%20servicio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >Hablar por WhatsApp</a>
             <p class="contact-direct-role">Asesor comercial EGIC</p>
-            <p class="contact-direct-phone">WhatsApp: 9992644945</p>
+            <a
+              class="contact-direct-phone"
+              href="https://wa.me/5219992644945?text=Hola%20quiero%20información%20sobre%20su%20servicio"
+              target="_blank"
+              rel="noopener noreferrer"
+            >WhatsApp: 999 264 4945</a>
           </div>
           <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="9d2a2cd1-f9d0-49f3-a943-e64dc17b1f86" />
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
             <div class="contact-grid">
               <div class="contact-field">
-                <label for="contact-name">Nombre completo</label>
-                <input id="contact-name" name="nombre_completo" type="text" placeholder="Arq. Nombre Apellido" required />
+                <label for="contact-name">Nombre</label>
+                <input id="contact-name" name="nombre" type="text" placeholder="Tu nombre" required />
               </div>
               <div class="contact-field">
-                <label for="contact-email">Correo electrónico</label>
-                <input id="contact-email" name="correo_electronico" type="email" placeholder="correo@empresa.com" required />
-              </div>
-              <div class="contact-field">
-                <label for="contact-phone">Teléfono</label>
-                <input id="contact-phone" name="telefono" type="tel" placeholder="+52 999 000 0000" />
-              </div>
-              <div class="contact-field">
-                <label for="contact-dev-type">Tipo de desarrollo</label>
-                <select id="contact-dev-type" name="tipo_desarrollo" required>
-                  <option value="">Seleccionar...</option>
-                  <option value="Fraccionamiento horizontal">Fraccionamiento horizontal</option>
-                  <option value="Condominio vertical">Condominio vertical</option>
-                  <option value="Uso mixto">Uso mixto</option>
-                  <option value="Otro">Otro</option>
-                </select>
+                <label for="contact-reach">Email o WhatsApp</label>
+                <input id="contact-reach" name="email_o_whatsapp" type="text" placeholder="correo@empresa.com o +52 999 000 0000" required />
               </div>
               <div class="contact-field full">
                 <label for="contact-message">Mensaje</label>
-                <textarea id="contact-message" name="mensaje" placeholder="Cuéntanos sobre tu desarrollo: ubicación, número de unidades, situación actual..." required></textarea>
+                <textarea id="contact-message" name="mensaje" placeholder="Cuéntanos sobre tu desarrollo: ubicación, número de unidades, etapa del proyecto..." required></textarea>
               </div>
             </div>
             <div class="contact-actions">
@@ -798,7 +961,7 @@
                 <span class="contact-spinner" aria-hidden="true"></span>
                 <span class="contact-btn-label">Solicitar propuesta<br />personalizada</span>
               </button>
-              <p class="contact-direct-note">También puedes escribir directamente al asesor comercial: 9992644945</p>
+              <p class="contact-direct-note">Atención directa con un asesor</p>
               <p id="contact-status" class="contact-status" aria-live="polite"></p>
             </div>
           </form>
@@ -1126,5 +1289,13 @@
     }
 
   </script>
+  <a
+    class="whatsapp-float"
+    href="https://wa.me/5219992644945?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20tu%20servicio"
+    target="_blank"
+    rel="noopener noreferrer"
+    onclick="if(window.gtag){gtag('event','whatsapp_click');}"
+    aria-label="Hablar por WhatsApp"
+  >WhatsApp</a>
 </body>
 </html>
