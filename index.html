@@ -466,19 +466,20 @@
     /* ─── MODAL ─────────────────────────────────────────────── */
     #modal-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.75);
-      z-index: 2000; display: flex; justify-content: flex-end;
+      z-index: 2000; display: flex; justify-content: flex-end; align-items: stretch;
       opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
     }
     #modal-overlay.active { opacity: 1; pointer-events: all; }
     #modal-panel {
       width: min(540px, 95vw); height: 100%;
       background: var(--black-soft); border-left: 2px solid var(--gold-primary);
-      padding: 48px 32px 40px; overflow-y: auto;
+      padding: 48px 32px 40px; overflow-y: auto; overflow-x: hidden;
       transform: translateX(100%); transition: transform 0.4s ease; position: relative;
+      box-sizing: border-box;
     }
     #modal-overlay.active #modal-panel { transform: translateX(0); }
     #modal-close {
-      position: absolute; top: 18px; right: 22px;
+      position: sticky; top: 18px; right: 22px; margin-left: auto; z-index: 2;
       background: none; border: none; color: var(--gold-primary);
       font-size: 22px; cursor: pointer; transition: color 0.3s; line-height: 1;
     }
@@ -590,7 +591,16 @@
       .who-sep { display: none; }
       .hero-desc { font-size: 16px; }
       .whatsapp-float { right: 12px; bottom: 12px; min-height: 48px; padding: 0 14px; font-size: 13px; }
-      #modal-panel { padding: 40px 18px 32px; }
+      #modal-overlay { justify-content: center; align-items: flex-end; }
+      #modal-panel {
+        width: 100vw; max-width: 100vw; height: 92vh; max-height: 92vh;
+        border-left: none; border-top: 2px solid var(--gold-primary);
+        border-radius: 18px 18px 0 0;
+        transform: translateY(100%);
+        padding: 56px 18px 32px;
+      }
+      #modal-overlay.active #modal-panel { transform: translateY(0); }
+      #modal-close { top: 12px; }
       .cta-block h2 { font-size: clamp(26px, 6vw, 38px); }
     }
 
