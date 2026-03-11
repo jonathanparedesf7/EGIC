@@ -2,19 +2,18 @@
 <html lang="es-MX">
 <head>
   <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-66TV4ZXP1Q"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-66TV4ZXP1Q');
-</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-66TV4ZXP1Q"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-66TV4ZXP1Q');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Propuesta ejecutiva de la Estrategia de Gestión Integral Condominal (EGIC) para desarrollos inmobiliarios en Yucatán y Campeche." />
-  <meta property="og:title" content="EGIC · Estrategia de Gestión Integral Condominal" />
-  <title>EGIC · Estrategia de Gestión Integral Condominal</title>
+  <meta name="description" content="EGIC administra condominios en Yucatán de forma centralizada: contabilidad, mantenimiento, seguridad y atención al condómino bajo un solo sistema profesional." />
+  <meta property="og:title" content="EGIC · Administración centralizada de condominios en Yucatán" />
+  <title>EGIC · Administración centralizada de condominios en Yucatán</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Lato:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -64,7 +63,7 @@
     @keyframes shimmer   { 0%,100%{ color: var(--gold-primary); } 50%{ color: var(--gold-shimmer); } }
     @keyframes pulseLine { 0%,100%{ opacity: 0.2; } 50%{ opacity: 1; } }
     @keyframes fadeSlide { from{ opacity:0; transform:translateY(18px); } to{ opacity:1; transform:none; } }
-    section, header { animation: fadeSlide 0.7s ease both; }
+    @keyframes fadeIn    { from{ opacity:0; } to{ opacity:1; } }
 
     /* ─── BOTONES ───────────────────────────────────────────── */
     .btn {
@@ -76,7 +75,7 @@
     }
     .btn-primary {
       border: 1px solid var(--gold-primary); color: var(--gold-primary);
-      padding: 13px 20px; background: transparent;
+      padding: 13px 20px; background: rgba(10,10,10,0.55);
     }
     .btn-primary:hover, .btn-primary:focus-visible {
       border-color: var(--gold-bright); color: var(--gold-shimmer);
@@ -109,43 +108,21 @@
       box-shadow: 0 10px 28px rgba(37,211,102,0.35);
       outline: none;
     }
-    .hero-trust-line {
-      margin-top: 6px;
-      color: var(--gray-light);
-      font-size: 14px;
-      font-weight: 300;
-      letter-spacing: 0.2px;
-    }
 
-    /* ─── WHATSAPP FLOTANTE ───────────────────────────────── */
+    /* ─── WHATSAPP FLOTANTE ─────────────────────────────────── */
     .whatsapp-float {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 3000;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      background: #25D366;
-      color: #0A0A0A;
-      border: 1px solid #25D366;
-      border-radius: 999px;
-      min-height: 52px;
-      padding: 0 18px;
-      font-family: "Lato", sans-serif;
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.4px;
+      position: fixed; bottom: 20px; right: 20px; z-index: 3000;
+      display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; background: #25D366; color: #0A0A0A;
+      border: 1px solid #25D366; border-radius: 999px; min-height: 52px;
+      padding: 0 18px; font-family: "Lato", sans-serif; font-size: 14px;
+      font-weight: 500; letter-spacing: 0.4px;
       box-shadow: 0 10px 24px rgba(0,0,0,0.24);
       transition: transform 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
     }
     .whatsapp-float:hover, .whatsapp-float:focus-visible {
-      background: #2be16f;
-      border-color: #2be16f;
-      transform: translateY(-2px);
-      box-shadow: 0 14px 28px rgba(0,0,0,0.28);
-      outline: none;
+      background: #2be16f; border-color: #2be16f;
+      transform: translateY(-2px); box-shadow: 0 14px 28px rgba(0,0,0,0.28); outline: none;
     }
 
     /* ─── NAVBAR ────────────────────────────────────────────── */
@@ -156,15 +133,15 @@
     }
     .site-nav.scrolled { backdrop-filter: blur(12px); }
     .nav-inner {
-      width: min(1300px, 95vw); margin: 0 auto; min-height: 101px;
+      width: min(1300px, 95vw); margin: 0 auto; min-height: 72px;
       display: flex; align-items: center; justify-content: space-between; gap: 16px;
     }
     .nav-brand { display: flex; align-items: baseline; gap: 8px; white-space: nowrap; }
-    .nav-brand strong { font-family: "Cormorant Garamond", serif; color: var(--gold-primary); font-size: 31px; letter-spacing: 1px; font-weight: 600; }
-    .nav-brand span   { font-size: 18px; color: var(--gray-light); font-weight: 300; }
+    .nav-brand strong { font-family: "Cormorant Garamond", serif; color: var(--gold-primary); font-size: 28px; letter-spacing: 1px; font-weight: 600; }
+    .nav-brand span   { font-size: 14px; color: var(--gray-light); font-weight: 300; letter-spacing: 0.3px; }
     .nav-links { display: flex; gap: 17px; flex-wrap: wrap; justify-content: flex-end; }
     .nav-links a {
-      color: var(--gray-light); text-decoration: none; font-size: 17px;
+      color: var(--gray-light); text-decoration: none; font-size: 14px;
       text-transform: uppercase; letter-spacing: 1px;
       position: relative; padding-bottom: 3px; transition: color 0.28s;
     }
@@ -178,33 +155,92 @@
 
     /* ─── HERO ──────────────────────────────────────────────── */
     .hero {
-      min-height: 100vh; padding-top: 120px;
+      min-height: 100vh; padding-top: 72px;
       display: grid; place-items: center;
       background: var(--black-deep); color: var(--white-pure);
       text-align: center; overflow: hidden; position: relative;
     }
     .hero-media { position: absolute; inset: 0; z-index: 0; }
-    .hero-media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.65) brightness(0.55); }
+    .hero-media img { width: 100%; height: 100%; object-fit: cover; filter: saturate(0.7) brightness(0.58); }
     .hero-media::after {
       content: ""; position: absolute; inset: 0;
-      background: linear-gradient(to bottom, transparent, var(--black-deep));
-    }
-    .hero::before {
-      content: ""; position: absolute; inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.04; pointer-events: none; z-index: 1;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.28) 0%, rgba(10,10,10,0.48) 60%, rgba(10,10,10,0.72) 100%);
     }
     .hero-inner {
       position: relative; z-index: 2;
-      width: min(980px, 92vw); display: flex; flex-direction: column;
-      align-items: center; gap: 18px;
+      width: min(1000px, 92vw); display: flex; flex-direction: column;
+      align-items: center; gap: 0; padding: 72px 0 52px;
+      animation: fadeSlide 0.9s ease both;
     }
-    .hero h1 { font-size: clamp(46px, 9.8vw, 80px); font-weight: 300; line-height: 0.98; max-width: 900px; }
+
+    /* ── HERO: SERVICIO EXPLÍCITO (lo primero que se ve) ─────── */
+    .hero-service-tag {
+      display: inline-flex; align-items: center; gap: 10px;
+      border: 1px solid var(--border-bright);
+      background: rgba(10,10,10,0.55);
+      color: var(--gold-bright);
+      font-family: "Lato", sans-serif;
+      font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+      font-weight: 500; padding: 8px 16px; margin-bottom: 36px;
+    }
+    .hero-service-tag::before {
+      content: ""; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold-primary); flex-shrink: 0;
+    }
+
+    .hero h1 {
+      font-size: clamp(46px, 9.5vw, 82px); font-weight: 300;
+      line-height: 1.0; max-width: 820px; margin-bottom: 36px;
+    }
     .shimmer  { color: var(--gold-primary); animation: shimmer 3s ease-in-out infinite; }
-    .hero-sub { max-width: 560px; font-size: 21px; color: var(--gray-light); }
-    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; margin-top: 8px; }
-    .byline { margin-top: 20px; color: var(--gray-mid); font-size: 13px; font-weight: 300; }
-    .scroll-indicator { width: 1px; height: 40px; background: var(--gold-muted); margin-top: 18px; animation: pulseLine 1.8s ease-in-out infinite; }
+
+    /* ── HERO: DESCRIPCIÓN CLARA ─────────────────────────────── */
+    .hero-desc {
+      max-width: 640px;
+      font-size: clamp(16px, 2.2vw, 19px);
+      color: var(--gray-light);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      font-weight: 300;
+    }
+
+    /* ── HERO: CHIPS DE LO QUE INCLUYE ──────────────────────── */
+    .hero-chips {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 8px; margin-bottom: 36px;
+    }
+    .hero-chip {
+      font-size: 13px; letter-spacing: 0.4px; color: var(--gray-mid);
+      border: 1px solid rgba(201,168,76,0.18);
+      padding: 5px 12px; font-weight: 400;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; margin-bottom: 14px; }
+    .hero-trust-line {
+      color: var(--gray-mid); font-size: 13px; font-weight: 300; letter-spacing: 0.2px;
+    }
+    .scroll-indicator { width: 1px; height: 40px; background: var(--gold-muted); margin-top: 28px; animation: pulseLine 1.8s ease-in-out infinite; }
+
+    /* ─── QUIÉN ESTÁ DETRÁS (nueva sección anchor) ──────────── */
+    .who-strip {
+      background: var(--black-soft);
+      border-top: 1px solid var(--border-gold);
+      border-bottom: 1px solid var(--border-gold);
+      padding: 22px 0;
+    }
+    .who-strip-inner {
+      width: min(1200px, 92vw); margin: 0 auto;
+      display: flex; flex-wrap: nowrap; align-items: center;
+      justify-content: center; gap: 20px 32px;
+    }
+    .who-item {
+      display: flex; align-items: center; gap: 10px;
+      text-align: center; flex: 0 0 auto;
+      font-family: "Lato", sans-serif;
+    }
+    .who-item-label { color: var(--gold-muted); font-size: 10px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; white-space: nowrap; }
+    .who-item-value { color: var(--white-pure); font-size: 15px; font-weight: 400; white-space: nowrap; }
+    .who-sep { width: 1px; height: 28px; background: var(--border-gold); flex: 0 0 auto; }
 
     /* ─── IMAGE BAND ────────────────────────────────────────── */
     .image-band {
@@ -224,8 +260,8 @@
     /* ─── PULL QUOTE ────────────────────────────────────────── */
     .pull-quote {
       font-family: "Cormorant Garamond", serif; font-style: italic; font-weight: 300;
-      font-size: clamp(28px, 4.5vw, 35px); color: var(--gold-primary);
-      max-width: 680px; margin: 0 auto 24px; text-align: center; line-height: 1.2;
+      font-size: clamp(24px, 4vw, 32px); color: var(--gold-primary);
+      max-width: 680px; margin: 0 auto 24px; text-align: center; line-height: 1.25;
     }
 
     /* ─── VISIÓN / MISIÓN ───────────────────────────────────── */
@@ -233,6 +269,29 @@
     .vm-block { border-left: 2px solid var(--gold-primary); padding-left: 20px; }
     .vm-block h3 { font-family: "Lato", sans-serif; color: var(--gold-muted); font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; margin-bottom: 8px; }
     .vm-block p  { color: var(--white-pure); font-size: 17px; }
+
+    /* ─── SERVICIOS GRID ────────────────────────────────────── */
+    .services-grid { display: grid; grid-template-columns: 1fr; gap: 12px; margin-bottom: 20px; }
+    .service-item {
+      display: flex; align-items: flex-start; gap: 16px;
+      background: var(--white-soft); border: 1px solid var(--border-gold);
+      border-left: 3px solid var(--gold-primary); padding: 16px 18px;
+    }
+    .service-icon { color: var(--gold-primary); flex-shrink: 0; margin-top: 2px; }
+    .service-icon svg { width: 22px; height: 22px; stroke: currentColor; fill: none; stroke-width: 1.7; }
+    .service-name { font-family: "Lato", sans-serif; font-size: 16px; font-weight: 500; color: var(--black-deep); margin-bottom: 3px; }
+    .service-desc { font-size: 14px; color: var(--gray-mid); font-weight: 300; }
+
+    /* ─── PARA QUIÉN ────────────────────────────────────────── */
+    .for-whom-grid { display: grid; grid-template-columns: 1fr; gap: 10px; margin-bottom: 24px; }
+    .for-whom-item {
+      display: flex; align-items: center; gap: 12px;
+      border: 1px solid var(--border-gold); padding: 14px 16px;
+      background: rgba(201,168,76,0.04);
+    }
+    .for-whom-icon { font-size: 20px; flex-shrink: 0; }
+    .for-whom-text { font-size: 16px; font-weight: 400; color: var(--white-pure); }
+    .for-whom-sub  { font-size: 13px; color: var(--gray-mid); font-weight: 300; }
 
     /* ─── PILLS ─────────────────────────────────────────────── */
     .pill-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 8px; }
@@ -257,15 +316,15 @@
 
     /* ─── KPIs ESTRELLA ─────────────────────────────────────── */
     .kpi-star-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-bottom: 24px; }
-    .kpi-star { text-align: center; padding: 14px 10px; border: 1px solid var(--border-gold); border-top: 2px solid var(--gold-primary); }
+    .kpi-star { text-align: center; padding: 14px 10px; border: 1px solid var(--border-gold); border-top: 2px solid var(--gold-primary); background: var(--white-soft); }
     .kpi-star-metric { display: block; font-family: "Cormorant Garamond", serif; font-size: clamp(32px, 5.5vw, 48px); color: var(--gold-primary); font-weight: 300; line-height: 1; margin-bottom: 6px; }
-    .kpi-star-label  { color: var(--gray-light); font-size: 14px; font-weight: 300; }
-    #resultados { background: var(--black-deep); }
-    #resultados h2 { color: var(--white-pure); }
-    #resultados .kpi-star { background: var(--black-mid); }
-    #resultados .kpi-star-label { color: var(--gray-mid); }
+    .kpi-star-label  { color: var(--gray-mid); font-size: 14px; font-weight: 300; }
+    #resultados { background: #0B0B0B; }
+    #resultados .cta-block h2 { color: var(--white-pure); }
+    #resultados .cta-sub,
+    #resultados .author-line { color: var(--gray-light); }
 
-    /* ─── EMPRESAS CERTIFICADAS ────────────────────────────── */
+    /* ─── EMPRESAS CERTIFICADAS ─────────────────────────────── */
     .partners-inline { margin: 16px 0 0; }
     .partners-inline-label {
       display: flex; align-items: center; justify-content: center; gap: 14px;
@@ -283,8 +342,7 @@
     .partner-card {
       position: relative; display: block; text-decoration: none;
       background: var(--black-soft); padding: 28px 22px;
-      transition: background-color 0.35s ease;
-      overflow: hidden;
+      transition: background-color 0.35s ease; overflow: hidden;
     }
     .partner-card::before {
       content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
@@ -298,191 +356,66 @@
       margin-bottom: 14px; padding: 10px 14px;
       background: linear-gradient(180deg, var(--white-warm), var(--white-soft));
       border: 1px solid var(--border-gold);
-      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35);
-      border-radius: 4px;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.35); border-radius: 4px;
     }
     .partner-logo-box img {
       width: min(253px, 100%); max-height: 55px;
-      object-fit: contain; display: block;
-      opacity: 0.95; filter: none;
+      object-fit: contain; display: block; opacity: 0.95;
     }
-    .logo-dark { opacity: 0.92; filter: none; }
-    .logo-light { opacity: 0.95; filter: none; }
-    .logo-black { opacity: 0.9; filter: none; }
     .partner-badge {
       display: inline-flex; align-items: center; gap: 8px;
       font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
       color: var(--gold-muted); margin-bottom: 10px;
     }
-    .partner-badge::before {
-      content: ""; width: 14px; height: 1px; background: var(--gold-muted);
-    }
-    .partner-name {
-      font-family: "Cormorant Garamond", serif; font-size: 20px;
-      color: var(--white-pure); line-height: 1.15; margin-bottom: 8px;
-    }
-    .partner-desc {
-      font-family: "Lato", sans-serif; font-size: 13px; color: var(--gray-mid);
-      line-height: 1.65; margin-bottom: 16px;
-    }
-    .partner-link {
-      display: inline-block; font-size: 11px; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--gold-primary);
-      border-top: 1px solid var(--border-gold); padding-top: 10px;
-    }
+    .partner-badge::before { content: ""; width: 14px; height: 1px; background: var(--gold-muted); }
+    .partner-name { font-family: "Cormorant Garamond", serif; font-size: 20px; color: var(--white-pure); line-height: 1.15; margin-bottom: 8px; }
+    .partner-desc { font-family: "Lato", sans-serif; font-size: 13px; color: var(--gray-mid); line-height: 1.65; margin-bottom: 16px; }
+    .partner-link { display: inline-block; font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-primary); border-top: 1px solid var(--border-gold); padding-top: 10px; }
 
     /* ─── CTA ───────────────────────────────────────────────── */
     .cta-block { text-align: center; padding-top: 48px; border-top: 1px solid var(--border-gold); margin-top: 40px; }
-    .cta-block h2 { color: var(--white-pure); font-size: clamp(32px, 5.6vw, 50px); font-weight: 300; max-width: 780px; margin: 0 auto 14px; }
+    .cta-block h2 { color: var(--black-deep); font-size: clamp(28px, 5vw, 44px); font-weight: 300; max-width: 780px; margin: 0 auto 14px; }
     .cta-block .eyebrow { color: var(--gold-muted); margin-bottom: 14px; display: block; }
-    .cta-sub    { color: var(--gray-light); max-width: 820px; margin: 0 auto 28px; font-size: 18px; font-weight: 300; line-height: 1.5; }
+    .cta-sub { color: var(--gray-mid); max-width: 680px; margin: 0 auto 28px; font-size: 18px; font-weight: 300; line-height: 1.5; }
     .contact-direct {
-      width: min(760px, 100%);
-      margin: 0 auto 24px;
-      padding: 16px 18px;
-      border: 1px solid var(--border-gold);
-      background: rgba(17,17,17,0.58);
-      text-align: center;
+      width: min(760px, 100%); margin: 0 auto 24px; padding: 16px 18px;
+      border: 1px solid var(--border-gold); background: var(--black-soft); text-align: center;
     }
-    .contact-direct-title {
-      font-size: 12px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--gold-primary);
-      margin-bottom: 8px;
-      font-weight: 400;
-    }
-    .contact-direct-name {
-      font-family: "Cormorant Garamond", serif;
-      font-size: 28px;
-      line-height: 1.05;
-      color: var(--white-pure);
-      margin-bottom: 10px;
-    }
+    .contact-direct-title { font-size: 12px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-primary); margin-bottom: 8px; font-weight: 400; }
+    .contact-direct-name  { font-family: "Cormorant Garamond", serif; font-size: 28px; line-height: 1.05; color: var(--white-pure); margin-bottom: 10px; }
+    .contact-direct-role  { color: var(--gray-light); font-size: 14px; margin-bottom: 10px; font-weight: 300; }
+    .contact-direct-phone { color: var(--gold-bright); font-size: 20px; letter-spacing: 1px; font-weight: 400; text-decoration: none; display: inline-block; margin-bottom: 10px; transition: color 0.25s ease; }
+    .contact-direct-phone:hover { color: var(--gold-shimmer); }
     .contact-direct-cta {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      background: var(--gold-primary);
-      color: var(--black-deep);
-      border: 1px solid var(--gold-primary);
-      border-radius: 999px;
-      padding: 12px 26px;
-      font-family: "Lato", sans-serif;
-      font-size: 15px;
-      font-weight: 500;
-      letter-spacing: 0.6px;
-      margin: 0 auto 10px;
-      box-shadow: 0 8px 22px rgba(201,168,76,0.3);
+      display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; background: var(--gold-primary); color: var(--black-deep);
+      border: 1px solid var(--gold-primary); border-radius: 999px; padding: 12px 26px;
+      font-family: "Lato", sans-serif; font-size: 15px; font-weight: 500; letter-spacing: 0.6px;
+      margin: 0 auto 10px; box-shadow: 0 8px 22px rgba(201,168,76,0.3);
       transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+      position: relative; overflow: hidden;
     }
-    .contact-direct-cta:hover,
-    .contact-direct-cta:focus-visible {
-      background: var(--gold-bright);
-      border-color: var(--gold-bright);
-      color: var(--black-deep);
-      box-shadow: 0 10px 26px rgba(226,192,104,0.4);
-      transform: translateY(-1px);
-      outline: none;
+    .contact-direct-cta::after {
+      content: ""; position: absolute; top: 0; left: -120%; width: 60%; height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,0.5), transparent);
+      transform: skewX(-20deg); animation: goldShimmer 3.5s infinite; pointer-events: none;
     }
-    .btn-gold {
-      position: relative;
-      overflow: hidden;
-    }
-    .btn-gold::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: -120%;
-      width: 60%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255,255,255,0.6),
-        transparent
-      );
-      transform: skewX(-20deg);
-      animation: goldShimmer 3.5s infinite;
-      pointer-events: none;
-    }
-    @keyframes goldShimmer {
-      0% {
-        left: -120%;
-      }
-      60% {
-        left: 120%;
-      }
-      100% {
-        left: 120%;
-      }
-    }
-    .btn-gold:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.25);
-      transition: all 0.25s ease;
-    }
-    .contact-direct-role {
-      color: var(--gray-light);
-      font-size: 14px;
-      margin-bottom: 10px;
-      font-weight: 300;
-    }
-    .contact-direct-phone {
-      color: var(--gold-bright);
-      font-size: 20px;
-      letter-spacing: 1px;
-      font-weight: 400;
-      text-decoration: none;
-      display: inline-block;
-      margin-bottom: 10px;
-      transition: color 0.25s ease;
-    }
-    .contact-direct-phone:hover,
-    .contact-direct-phone:focus-visible {
-      color: var(--gold-shimmer);
-      outline: none;
-    }
-    .contact-direct-trust {
-      color: var(--gray-light);
-      font-size: 13px;
-      font-weight: 300;
-    }
-    .author-line{ margin-top: 24px; color: var(--gray-mid); font-size: 13px; font-weight: 300; }
+    @keyframes goldShimmer { 0%{ left: -120%; } 60%{ left: 120%; } 100%{ left: 120%; } }
+    .contact-direct-cta:hover { background: var(--gold-bright); border-color: var(--gold-bright); transform: translateY(-1px); }
+    .author-line { margin-top: 24px; color: var(--gray-mid); font-size: 13px; font-weight: 300; }
     .contact-form {
-      width: min(980px, 100%);
-      margin: 0 auto;
-      background: transparent;
-      border: none;
-      padding: 0;
-      display: grid;
-      gap: 16px;
-      text-align: left;
+      width: min(980px, 100%); margin: 0 auto; background: transparent;
+      border: none; padding: 0; display: grid; gap: 16px; text-align: left;
     }
     .contact-grid { display: grid; grid-template-columns: 1fr; gap: 14px 18px; }
     .contact-field { display: grid; gap: 7px; }
-    .contact-field label {
-      font-family: "Lato", sans-serif;
-      color: #C9A84C;
-      font-size: 14px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      text-align: center;
-      font-weight: 400;
-    }
+    .contact-field label { font-family: "Lato", sans-serif; color: #C9A84C; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; text-align: center; font-weight: 400; }
     .contact-field input,
     .contact-field select,
     .contact-field textarea {
-      width: 100%;
-      background: #1C1C1C;
-      border: 1px solid rgba(201,168,76,0.25);
-      color: var(--white-pure);
-      font-family: "Lato", sans-serif;
-      font-size: 15px;
-      font-weight: 300;
-      padding: 13px 16px;
-      line-height: 1.25;
+      width: 100%; background: #1C1C1C; border: 1px solid rgba(201,168,76,0.25);
+      color: var(--white-pure); font-family: "Lato", sans-serif; font-size: 15px;
+      font-weight: 300; padding: 13px 16px; line-height: 1.25;
       transition: border-color 0.25s, box-shadow 0.25s;
     }
     .contact-field input::placeholder,
@@ -500,54 +433,28 @@
     }
     .contact-field input:focus,
     .contact-field select:focus,
-    .contact-field textarea:focus {
-      border-color: #C9A84C;
-      box-shadow: 0 0 0 2px rgba(201,168,76,0.2);
-      outline: none;
-    }
+    .contact-field textarea:focus { border-color: #C9A84C; box-shadow: 0 0 0 2px rgba(201,168,76,0.2); outline: none; }
     .contact-field textarea { min-height: 140px; resize: vertical; }
     .contact-field select:invalid { color: #77736E; }
     .contact-field select option { color: var(--white-pure); background: #1C1C1C; }
     .contact-actions { display: grid; justify-items: center; gap: 16px; margin-top: 8px; }
     .contact-submit {
-      min-width: 430px;
-      min-height: 74px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      font-size: 14px;
-      letter-spacing: 4px;
-      font-weight: 400;
-      line-height: 1.2;
-      padding: 16px 28px;
+      min-width: 430px; min-height: 74px; display: inline-flex;
+      align-items: center; justify-content: center; gap: 12px;
+      font-size: 14px; letter-spacing: 4px; font-weight: 400; line-height: 1.2; padding: 16px 28px;
     }
     .contact-submit[disabled] { opacity: 0.7; cursor: not-allowed; }
     .contact-btn-label { display: inline-block; text-align: center; }
     .contact-spinner {
-      width: 14px;
-      height: 14px;
-      border: 2px solid rgba(201,168,76,0.4);
-      border-top-color: #C9A84C;
-      border-radius: 50%;
-      display: none;
+      width: 14px; height: 14px; border: 2px solid rgba(201,168,76,0.4);
+      border-top-color: #C9A84C; border-radius: 50%; display: none;
       animation: contactSpin 0.8s linear infinite;
     }
     .contact-submit.is-loading .contact-spinner { display: inline-block; }
-    .contact-status {
-      min-height: 20px;
-      font-family: "Lato", sans-serif;
-      font-size: 14px;
-      text-align: center;
-    }
+    .contact-status { min-height: 20px; font-family: "Lato", sans-serif; font-size: 14px; text-align: center; }
     .contact-status.success { color: #C9A84C; }
-    .contact-status.error { color: #f3b0b0; }
-    .contact-direct-note {
-      color: var(--gray-mid);
-      font-size: 13px;
-      text-align: center;
-      font-weight: 300;
-    }
+    .contact-status.error   { color: #f3b0b0; }
+    .contact-direct-note { color: var(--gray-mid); font-size: 13px; text-align: center; font-weight: 300; }
     @keyframes contactSpin { to { transform: rotate(360deg); } }
 
     /* ─── FOOTER ────────────────────────────────────────────── */
@@ -567,8 +474,7 @@
       width: min(540px, 95vw); height: 100%;
       background: var(--black-soft); border-left: 2px solid var(--gold-primary);
       padding: 48px 32px 40px; overflow-y: auto;
-      transform: translateX(100%); transition: transform 0.4s ease;
-      position: relative;
+      transform: translateX(100%); transition: transform 0.4s ease; position: relative;
     }
     #modal-overlay.active #modal-panel { transform: translateX(0); }
     #modal-close {
@@ -578,9 +484,9 @@
     }
     #modal-close:hover { color: var(--gold-bright); }
     #modal-content h2 {
-      font-family: "Cormorant Garamond", serif;
-      color: var(--gold-primary); font-size: 30px; font-weight: 400;
-      margin-bottom: 22px; padding-bottom: 14px; border-bottom: 1px solid var(--border-gold);
+      font-family: "Cormorant Garamond", serif; color: var(--gold-primary);
+      font-size: 30px; font-weight: 400; margin-bottom: 22px;
+      padding-bottom: 14px; border-bottom: 1px solid var(--border-gold);
     }
     .modal-divider { margin: 20px 0; height: 1px; background: var(--border-gold); }
 
@@ -640,18 +546,22 @@
       .dept-grid        { grid-template-columns: repeat(2, 1fr); }
       .footer-inner     { grid-template-columns: 1fr 1fr; text-align: left; align-items: center; }
       .footer-note      { text-align: right; }
-      .contact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .contact-grid     { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .contact-field.full { grid-column: 1 / -1; }
+      .services-grid    { grid-template-columns: repeat(2, 1fr); }
+      .for-whom-grid    { grid-template-columns: repeat(2, 1fr); }
+      .hero-chips       { max-width: 680px; }
     }
     @media (min-width: 1200px) {
       .cards-grid { grid-template-columns: repeat(3, 1fr); }
       .dept-grid  { grid-template-columns: repeat(3, 1fr); }
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
     }
 
     /* ─── MÓVIL ─────────────────────────────────────────────── */
     @media (max-width: 767px) {
       .nav-inner    { min-height: 62px; padding: 8px 0; gap: 11px; }
-      .nav-brand strong { font-size: 24px; }
+      .nav-brand strong { font-size: 22px; }
       .nav-brand span   { display: none; }
       .nav-links {
         gap: 6px; flex-wrap: nowrap; overflow-x: auto;
@@ -661,55 +571,27 @@
         -webkit-mask-image: linear-gradient(to right, black 75%, transparent 100%);
       }
       .nav-links::-webkit-scrollbar { display: none; }
-      .nav-links a  { font-size: 14px; letter-spacing: 0.7px; white-space: nowrap; }
+      .nav-links a  { font-size: 13px; letter-spacing: 0.7px; white-space: nowrap; }
       .kpi-star-grid { grid-template-columns: repeat(2, 1fr); }
       .partner-grid { grid-template-columns: 1fr; }
-      .cta-sub { font-size: 18px; margin-bottom: 22px; }
       .contact-direct { padding: 14px 12px; margin-bottom: 18px; }
       .contact-direct-name { font-size: 24px; }
       .contact-direct-phone { font-size: 18px; }
       .contact-direct-cta { width: 100%; max-width: 300px; }
-      .contact-direct-trust { font-size: 12px; }
-      .author-line { font-size: 13px; }
       .contact-form { width: 100%; gap: 12px; }
       .contact-grid { gap: 10px; }
       .contact-field label { font-size: 12px; letter-spacing: 3px; }
       .contact-field input,
       .contact-field select,
-      .contact-field textarea {
-        font-size: 18px;
-        padding: 12px;
-      }
+      .contact-field textarea { font-size: 16px; padding: 12px; }
       .contact-field textarea { min-height: 120px; }
-      .contact-submit {
-        min-width: min(100%, 340px);
-        min-height: 62px;
-        font-size: 16px;
-        letter-spacing: 3px;
-        padding: 10px 16px;
-      }
-      .contact-status { font-size: 14px; min-height: 20px; }
-      .cta-block .btn-primary {
-        border-width: 2px; border-color: var(--gold-bright); color: var(--gold-bright);
-        padding: 14px 24px; box-shadow: 0 0 16px rgba(226,192,104,0.25);
-      }
-      .cta-block .btn-primary:hover {
-        border-color: var(--gold-shimmer); color: var(--gold-shimmer);
-        box-shadow: 0 0 28px rgba(240,208,128,0.4);
-      }
-      .btn-whatsapp {
-        width: 100%;
-        max-width: 320px;
-      }
-      .hero-trust-line { font-size: 13px; }
-      .whatsapp-float {
-        right: 12px;
-        bottom: 12px;
-        min-height: 48px;
-        padding: 0 14px;
-        font-size: 13px;
-      }
+      .contact-submit { min-width: min(100%, 340px); min-height: 62px; font-size: 14px; letter-spacing: 3px; padding: 10px 16px; }
+      .who-strip-inner { gap: 12px 24px; }
+      .who-sep { display: none; }
+      .hero-desc { font-size: 16px; }
+      .whatsapp-float { right: 12px; bottom: 12px; min-height: 48px; padding: 0 14px; font-size: 13px; }
       #modal-panel { padding: 40px 18px 32px; }
+      .cta-block h2 { font-size: clamp(26px, 6vw, 38px); }
     }
 
   </style>
@@ -721,11 +603,11 @@
     <div class="nav-inner">
       <div class="nav-brand">
         <strong>EGIC</strong>
-        <span>· Administración Centralizada</span>
+        <span>· Administración Centralizada de Condominios</span>
       </div>
       <div class="nav-links">
+        <a href="#servicio"   data-nav="servicio">Servicio</a>
         <a href="#problema"   data-nav="problema">Problema</a>
-        <a href="#modelo"     data-nav="modelo">Modelo</a>
         <a href="#ventajas"   data-nav="ventajas">Ventajas</a>
         <a href="#plan"       data-nav="plan">Plan</a>
         <a href="#resultados" data-nav="resultados">Resultados</a>
@@ -740,62 +622,173 @@
       <img src="imagen/1.jpg" alt="" />
     </div>
     <div class="hero-inner">
-      <div class="decor-line" aria-hidden="true"></div>
-      <p class="eyebrow">PLAN DE TRABAJO · 2026</p>
-      <h1>La administración que<br />redefine el <span class="shimmer">valor</span><br />de tu patrimonio.</h1>
-      <p class="hero-sub">Estrategia de Gestión Integral Condominal · Yucatán, México</p>
+
+      <div class="hero-service-tag">Administración centralizada de condominios · Yucatán</div>
+
+      <h1>Tu condominio,<br />administrado por<br /><span class="shimmer">un solo equipo.</span></h1>
+
       <div class="hero-actions">
-        <a class="btn btn-primary" href="#problema">Conocer el modelo</a>
+        <a class="btn btn-primary" href="#servicio">Conocer el modelo</a>
         <a
           class="btn btn-whatsapp"
-          href="https://wa.me/5219992644945?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20tu%20servicio"
-          target="_blank"
-          rel="noopener noreferrer"
+          href="https://wa.me/5219992644945?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20EGIC%20para%20mi%20condominio"
+          target="_blank" rel="noopener noreferrer"
           onclick="if(window.gtag){gtag('event','whatsapp_click');}"
         >Hablar por WhatsApp</a>
-        <a class="btn btn-text"    href="#contacto">Contactar</a>
       </div>
-      <p class="hero-trust-line">Consulta gratuita — respuesta en menos de 24 horas</p>
+      <p class="hero-trust-line">Consulta gratuita · Sin compromiso</p>
       <div class="scroll-indicator" aria-hidden="true"></div>
+
     </div>
   </header>
 
+  <!-- FRANJA DE CONTEXTO RÁPIDO -->
+  <div class="who-strip">
+    <div class="who-strip-inner">
+      <div class="who-item">
+        <div>
+          <div class="who-item-label">Empresa gestora</div>
+          <div class="who-item-value">InnovArq · Arq. Mónica Oceguera</div>
+        </div>
+      </div>
+      <div class="who-sep"></div>
+      <div class="who-item">
+        <div>
+          <div class="who-item-label">Zona de operación</div>
+          <div class="who-item-value">Yucatán y Campeche, México</div>
+        </div>
+      </div>
+      <div class="who-sep"></div>
+      <div class="who-item">
+        <div>
+          <div class="who-item-label">Para quién</div>
+          <div class="who-item-value">Desarrolladores · Juntas directivas · Condominios</div>
+        </div>
+      </div>
+      <div class="who-sep"></div>
+      <div class="who-item">
+        <div>
+          <div class="who-item-label">Ahorro estimado</div>
+          <div class="who-item-value">15 – 25% en costos operativos</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <main>
 
-    <!-- 01 · EL PROBLEMA -->
-    <section class="section light" id="problema">
+    <!-- 01 · QUÉ ES EGIC -->
+    <section class="section light" id="servicio">
       <div class="container">
         <header class="section-header">
           <span class="section-label">01</span>
-          <h2>El costo oculto de administrar por separado</h2>
+          <h2>¿Qué es EGIC y qué incluye?</h2>
         </header>
-        <p class="section-intro">6 puntos de falla crítica erosionan el valor de cada desarrollo que opera sin un sistema centralizado.</p>
-        <button class="btn-detail" onclick="openModal('problema')">Ver detalle →</button>
+        <p class="section-intro">
+          EGIC (Estrategia de Gestión Integral Condominal) es un modelo de administración centralizada que sustituye la gestión fragmentada de cada condominio por un equipo único, especializado y tecnificado que opera todos los frentes al mismo tiempo.
+        </p>
+        <div class="services-grid">
+          <div class="service-item">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+            </span>
+            <div>
+              <div class="service-name">Contabilidad y cobranza</div>
+              <div class="service-desc">Presupuestos, estados financieros mensuales, cobranza de cuotas y control de adeudos en tiempo real.</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </span>
+            <div>
+              <div class="service-name">Seguridad y control de accesos</div>
+              <div class="service-desc">Personal operativo certificado, CCTV, control de accesos automatizado y protocolos de respuesta inmediata.</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>
+            </span>
+            <div>
+              <div class="service-name">Mantenimiento preventivo y correctivo</div>
+              <div class="service-desc">Albercas, ascensores, plomería, electricidad, jardinería y más — con proveedores especializados y precios negociados.</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/><path d="M8 6V4m8 2V4M8 18v2m8-2v2"/></svg>
+            </span>
+            <div>
+              <div class="service-name">Asesoría legal y cumplimiento</div>
+              <div class="service-desc">Contratos, reglamentos internos y cumplimiento de la Ley de Propiedad en Condominio del Estado de Yucatán.</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </span>
+            <div>
+              <div class="service-name">Atención al condómino</div>
+              <div class="service-desc">Canal único de solicitudes, quejas y comunicados. Plataforma digital con seguimiento de tickets en tiempo real.</div>
+            </div>
+          </div>
+          <div class="service-item">
+            <span class="service-icon">
+              <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+            </span>
+            <div>
+              <div class="service-name">Áreas comunes y sociales</div>
+              <div class="service-desc">Gestión de parques, canchas, casas club y salones — con calendarios de reserva y mantenimiento programado.</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- PARA QUIÉN -->
+        <p style="font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-primary);margin:28px 0 14px;font-weight:500;">¿Para quién es EGIC?</p>
+        <div class="for-whom-grid">
+          <div class="for-whom-item">
+            <span class="for-whom-icon">🏗️</span>
+            <div>
+              <div class="for-whom-text">Desarrolladores inmobiliarios</div>
+              <div class="for-whom-sub">Que entregan o tienen múltiples fases residenciales</div>
+            </div>
+          </div>
+          <div class="for-whom-item">
+            <span class="for-whom-icon">🏢</span>
+            <div>
+              <div class="for-whom-text">Juntas directivas de condominios</div>
+              <div class="for-whom-sub">Que buscan profesionalizar su administración actual</div>
+            </div>
+          </div>
+          <div class="for-whom-item">
+            <span class="for-whom-icon">🏘️</span>
+            <div>
+              <div class="for-whom-text">Fraccionamientos con subcondominios</div>
+              <div class="for-whom-sub">Que necesitan unificar su gestión y cobranza</div>
+            </div>
+          </div>
+          <div class="for-whom-item">
+            <span class="for-whom-icon">📊</span>
+            <div>
+              <div class="for-whom-text">Condominios con problemas de control</div>
+              <div class="for-whom-sub">Cobranza inconsistente, transparencia financiera limitada o proveedores sin contrato</div>
+            </div>
+          </div>
+        </div>
+        <button class="btn-detail" onclick="openModal('modelo')">Ver estructura completa →</button>
       </div>
     </section>
 
-    <!-- 02 · EL MODELO EGIC -->
-    <section class="section dark" id="modelo">
+    <!-- 02 · EL PROBLEMA -->
+    <section class="section dark" id="problema">
       <div class="container">
         <header class="section-header">
           <span class="section-label">02</span>
-          <h2>Una solución probada: el modelo EGIC</h2>
+          <h2>El costo oculto de administrar por separado</h2>
         </header>
-        <p class="pull-quote">"Gestión centralizada que optimiza, transparenta y valoriza cada peso invertido en tu condominio."</p>
-        <figure class="image-band">
-          <img src="imagen/2.jpg" alt="Desarrollo residencial de alta gama" />
-        </figure>
-        <div class="vision-mission">
-          <article class="vm-block">
-            <h3>Visión</h3>
-            <p>Consolidar el estándar regional de administración maestra.</p>
-          </article>
-          <article class="vm-block">
-            <h3>Misión</h3>
-            <p>Diseñar y ejecutar una administración centralizada que disminuya costos y eleve transparencia.</p>
-          </article>
-        </div>
-        <button class="btn-detail" onclick="openModal('modelo')">Ver detalle →</button>
+        <p class="section-intro" style="color:var(--gray-light);">6 puntos de falla crítica que erosionan el valor de cada desarrollo que opera sin un sistema centralizado.</p>
+        <button class="btn-detail" onclick="openModal('problema')">Ver los 6 puntos de falla →</button>
       </div>
     </section>
 
@@ -820,7 +813,7 @@
             <span class="stat-label">Ahorro por negociación colectiva</span>
           </div>
         </div>
-        <button class="btn-detail" onclick="openModal('ventajas')">Ver detalle →</button>
+        <button class="btn-detail" onclick="openModal('ventajas')">Ver casos de éxito →</button>
       </div>
     </section>
 
@@ -829,13 +822,13 @@
       <div class="container">
         <header class="section-header">
           <span class="section-label">04</span>
-          <h2>Tres fases hacia la transformación</h2>
+          <h2>Tres fases para implementar EGIC</h2>
         </header>
         <div class="phases-compact">
           <div class="phase-row">
             <span class="phase-row-num">1</span>
             <div>
-              <div class="phase-row-name">Planificación y diseño estratégico</div>
+              <div class="phase-row-name">Diagnóstico y diseño estratégico</div>
               <div class="phase-row-time">1–2 meses</div>
             </div>
           </div>
@@ -849,17 +842,17 @@
           <div class="phase-row">
             <span class="phase-row-num">3</span>
             <div>
-              <div class="phase-row-name">Operación y optimización continua</div>
+              <div class="phase-row-name">Operación y mejora continua</div>
               <div class="phase-row-time">Permanente</div>
             </div>
           </div>
         </div>
-        <button class="btn-detail" onclick="openModal('plan')">Ver detalle →</button>
+        <button class="btn-detail" onclick="openModal('plan')">Ver plan detallado →</button>
       </div>
     </section>
 
     <!-- 05 · RESULTADOS + CONTACTO -->
-    <section class="section section light" id="resultados">
+    <section class="section dark" id="resultados">
       <div class="container">
         <header class="section-header">
           <span class="section-label">05</span>
@@ -883,14 +876,14 @@
             <span class="kpi-star-label">Multas por incumplimiento</span>
           </div>
         </div>
-        <button class="btn-detail" onclick="openModal('indicadores')" style="margin-bottom:48px;">Ver detalle →</button>
+        <button class="btn-detail" onclick="openModal('indicadores')" style="margin-bottom:48px;">Ver todos los indicadores →</button>
 
         <div class="partners-inline">
-          <p class="partners-inline-label">Empresas certificadas · Respaldo técnico</p>
+          <p class="partners-inline-label">Equipo operativo · Empresas certificadas</p>
           <div class="partner-grid">
             <article class="partner-card">
               <div class="partner-logo-box">
-                <img src="3 Empresas Filiales/InnovArq.png" alt="InnovArq" class="logo-dark" />
+                <img src="3 Empresas Filiales/InnovArq.png" alt="InnovArq" />
               </div>
               <span class="partner-badge">Gerencia · Gestión integral</span>
               <p class="partner-name">InnovArq</p>
@@ -898,7 +891,7 @@
             </article>
             <a class="partner-card" href="https://seformex.mx/" target="_blank" rel="noopener noreferrer">
               <div class="partner-logo-box">
-                <img src="3 Empresas Filiales/FORMEX.png" alt="FORMEX" class="logo-light" />
+                <img src="3 Empresas Filiales/FORMEX.png" alt="FORMEX" />
               </div>
               <span class="partner-badge">Seguridad · Operativa</span>
               <p class="partner-name">FORMEX Servicios Estratégicos</p>
@@ -907,7 +900,7 @@
             </a>
             <a class="partner-card" href="https://encer.mx/" target="_blank" rel="noopener noreferrer">
               <div class="partner-logo-box">
-                <img src="3 Empresas Filiales/ENCER.png" alt="ENCER" class="logo-black" />
+                <img src="3 Empresas Filiales/ENCER.png" alt="ENCER" />
               </div>
               <span class="partner-badge">Seguridad · Sistemas</span>
               <p class="partner-name">ENCER</p>
@@ -919,26 +912,26 @@
 
         <!-- CTA -->
         <div class="cta-block" id="contacto">
-          <span class="eyebrow">DAR EL SIGUIENTE PASO</span>
-          <h2>El estándar de administración que el mercado inmobiliario de Yucatán necesita.</h2>
-          <p class="cta-sub">Contáctanos para diseñar una propuesta personalizada para tu desarrollo.</p>
+          <span class="eyebrow">SIGUIENTE PASO</span>
+          <h2>¿Tu condominio necesita una administración profesional?</h2>
+          <p class="cta-sub">Contáctanos para diseñar una propuesta personalizada. Sin costo, sin compromiso.</p>
+
           <div class="contact-direct" aria-label="Contacto directo">
-            <p class="contact-direct-title">Prefieres contacto directo</p>
+            <p class="contact-direct-title">Contacto directo</p>
             <p class="contact-direct-name">Jonathan P.</p>
             <a
-              class="contact-direct-cta btn-gold"
-              href="https://wa.me/5219992644945?text=Hola%20quiero%20información%20sobre%20su%20servicio"
-              target="_blank"
-              rel="noopener noreferrer"
+              class="contact-direct-cta"
+              href="https://wa.me/5219992644945?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20EGIC%20para%20mi%20condominio"
+              target="_blank" rel="noopener noreferrer"
             >Hablar por WhatsApp</a>
             <p class="contact-direct-role">Asesor comercial EGIC</p>
             <a
               class="contact-direct-phone"
-              href="https://wa.me/5219992644945?text=Hola%20quiero%20información%20sobre%20su%20servicio"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="https://wa.me/5219992644945?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20EGIC"
+              target="_blank" rel="noopener noreferrer"
             >WhatsApp: 999 264 4945</a>
           </div>
+
           <form id="contact-form" class="contact-form" action="https://api.web3forms.com/submit" method="POST" novalidate>
             <input type="hidden" name="access_key" value="9d2a2cd1-f9d0-49f3-a943-e64dc17b1f86" />
             <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
@@ -952,8 +945,8 @@
                 <input id="contact-reach" name="email_o_whatsapp" type="text" placeholder="correo@empresa.com o +52 999 000 0000" required />
               </div>
               <div class="contact-field full">
-                <label for="contact-message">Mensaje</label>
-                <textarea id="contact-message" name="mensaje" placeholder="Cuéntanos sobre tu desarrollo: ubicación, número de unidades, etapa del proyecto..." required></textarea>
+                <label for="contact-message">Cuéntanos sobre tu condominio</label>
+                <textarea id="contact-message" name="mensaje" placeholder="Ubicación, número de unidades, etapa del proyecto, problema actual..." required></textarea>
               </div>
             </div>
             <div class="contact-actions">
@@ -961,7 +954,7 @@
                 <span class="contact-spinner" aria-hidden="true"></span>
                 <span class="contact-btn-label">Solicitar propuesta<br />personalizada</span>
               </button>
-              <p class="contact-direct-note">Atención directa con un asesor</p>
+              <p class="contact-direct-note">Atención directa con un asesor · Sin compromiso</p>
               <p id="contact-status" class="contact-status" aria-live="polite"></p>
             </div>
           </form>
@@ -975,7 +968,7 @@
 
   <footer>
     <div class="footer-inner">
-      <p class="footer-brand"><strong>EGIC</strong> · Estrategia de Gestión Integral Condominal</p>
+      <p class="footer-brand"><strong>EGIC</strong> · Estrategia de Gestión Integral Condominal · Yucatán, México</p>
       <p class="footer-note">Profesionalización sobre improvisación. · 2026</p>
     </div>
   </footer>
@@ -1042,15 +1035,15 @@
         </div>
         <div class="modal-divider"></div>
         <div class="structure-grid">
-          <div class="top-node">GERENCIA GENERAL</div>
+          <div class="top-node">GERENCIA GENERAL · EGIC</div>
           <div class="org-line-main"></div>
           <div class="dept-grid">
             <article class="dept"><h3>Departamento Financiero</h3><p>Planeación presupuestal, cobranza centralizada y reporteo consolidado por subcondominio.</p></article>
             <article class="dept"><h3>Departamento de Seguridad</h3><p>Protocolos unificados, control de accesos y respuesta coordinada ante incidencias.</p></article>
-            <article class="dept"><h3>Departamento de Operaciones y Mantenimiento</h3><p>Mantenimiento preventivo y correctivo con estandarización técnica y trazabilidad.</p></article>
-            <article class="dept"><h3>Departamento Legal y Cumplimiento</h3><p>Gestión regulatoria, contratos marco y prevención de contingencias legales.</p></article>
-            <article class="dept"><h3>Departamento de Atención al Condómino</h3><p>Canal único de atención, comunicación operativa y seguimiento de solicitudes.</p></article>
-            <article class="dept"><h3>Departamento de Áreas Sociales</h3><p>Gestión de amenidades, eventos comunitarios y administración de reservas.</p></article>
+            <article class="dept"><h3>Operaciones y Mantenimiento</h3><p>Mantenimiento preventivo y correctivo con estandarización técnica y trazabilidad.</p></article>
+            <article class="dept"><h3>Legal y Cumplimiento</h3><p>Gestión regulatoria, contratos marco y prevención de contingencias legales.</p></article>
+            <article class="dept"><h3>Atención al Condómino</h3><p>Canal único de atención, comunicación operativa y seguimiento de solicitudes.</p></article>
+            <article class="dept"><h3>Áreas Sociales</h3><p>Gestión de amenidades, eventos comunitarios y administración de reservas.</p></article>
           </div>
         </div>
         <div class="modal-divider"></div>
@@ -1075,27 +1068,24 @@
           <li>Procesos estandarizados con manuales operativos</li>
         </ul>
         <div class="modal-divider"></div>
-        <p style="color:var(--gold-muted);font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500;margin-bottom:14px;">EL MODELO EN ACCIÓN</p>
-        <figure style="margin-bottom:16px;border:1px solid var(--border-gold);overflow:hidden;">
-          <img src="imagen/4.jpg" alt="Complejo residencial" style="width:100%;height:160px;object-fit:cover;display:block;" />
-        </figure>
+        <p style="color:var(--gold-muted);font-size:10px;letter-spacing:3px;text-transform:uppercase;font-weight:500;margin-bottom:14px;">CASOS DE ÉXITO</p>
         <div class="case-grid">
           <article class="case-card">
             <h3>Fraccionamiento Cuatro Lagos · Yucatán</h3>
             <p class="case-sub">Implementación desde origen</p>
             <p class="case-stats">10 subcondominios · 3 casas club · 2 zonas comerciales</p>
-            <p>Sin estructuras administrativas previas, la EGIC se integró como único modelo de gestión desde el inicio, materializando economías de escala desde el primer día.</p>
+            <p>Sin estructuras administrativas previas, EGIC se integró como único modelo de gestión desde el inicio, materializando economías de escala desde el primer día.</p>
             <div class="result-tags">
               <span>Cuotas competitivas</span><span>Valor patrimonial inmediato</span><span>Cero fricción de transición</span>
             </div>
           </article>
           <article class="case-card">
             <h3>Condominio en Campeche</h3>
-            <p class="case-sub">Superación de fragmentación</p>
+            <p class="case-sub">Superación de fragmentación administrativa</p>
             <p class="case-stats">12 subcondominios · 1 casa club · 1 zona comercial</p>
             <p>La centralización eliminó la duplicidad administrativa, unificó la cobranza y resolvió el incumplimiento recurrente de cuotas al condominio maestro.</p>
             <div class="result-tags">
-              <span>Cobranza unificada</span><span>Control de adeudos en tiempo real</span><span>Reducción de costos administrativos</span>
+              <span>Cobranza unificada</span><span>Control de adeudos en tiempo real</span><span>Reducción de costos</span>
             </div>
           </article>
         </div>`,
@@ -1105,12 +1095,12 @@
         <div class="timeline">
           <article class="phase">
             <span class="phase-badge">1</span>
-            <h3>Planificación y diseño estratégico</h3>
+            <h3>Diagnóstico y diseño estratégico</h3>
             <p class="phase-time">1–2 meses</p>
             <ul>
-              <li>Estudio de viabilidad</li>
-              <li>Diseño organizacional</li>
-              <li>Plataforma itComplex</li>
+              <li>Estudio de viabilidad por condominio</li>
+              <li>Diseño organizacional y roles</li>
+              <li>Implementación de plataforma itComplex</li>
               <li>Marco legal y acuerdos de servicio</li>
             </ul>
           </article>
@@ -1119,26 +1109,23 @@
             <h3>Transición y configuración operativa</h3>
             <p class="phase-time">2–3 meses</p>
             <ul>
-              <li>Migración de datos</li>
-              <li>Consolidación de contratos</li>
-              <li>Capacitación intensiva</li>
+              <li>Migración y digitalización de datos</li>
+              <li>Consolidación de contratos con proveedores</li>
+              <li>Capacitación del equipo y juntas directivas</li>
               <li>Campaña de comunicación a condóminos</li>
             </ul>
           </article>
           <article class="phase active">
             <span class="phase-badge">3</span>
-            <h3>Operación y optimización continua</h3>
+            <h3>Operación y mejora continua</h3>
             <p class="phase-time">Permanente</p>
             <ul>
-              <li>Monitoreo de KPIs</li>
-              <li>Encuestas de satisfacción</li>
-              <li>Ajustes y mejora continua</li>
+              <li>Monitoreo de KPIs y tablero de control</li>
+              <li>Encuestas periódicas de satisfacción</li>
+              <li>Ajustes, mejoras y revisión de contratos</li>
             </ul>
           </article>
-        </div>
-        <figure style="margin-top:24px;border:1px solid var(--border-gold);overflow:hidden;">
-          <img src="imagen/3.jpg" alt="Mesa de trabajo" style="width:100%;height:160px;object-fit:cover;display:block;" />
-        </figure>`,
+        </div>`,
 
       indicadores: `
         <h2>Indicadores completos</h2>
@@ -1172,7 +1159,7 @@
             <div class="kpi-cards">
               <div class="kpi-card"><span class="kpi-metric">0</span><span class="kpi-label">Multas por incumplimiento normativo</span></div>
               <div class="kpi-card"><span class="kpi-metric">Trimestral</span><span class="kpi-label">Informes financieros consolidados</span></div>
-              <div class="kpi-card"><span class="kpi-metric">Mínimos</span><span class="kpi-label">Auditorías con hallazgos mínimos o nulos</span></div>
+              <div class="kpi-card"><span class="kpi-metric">Mínimos</span><span class="kpi-label">Hallazgos en auditorías</span></div>
             </div>
           </article>
         </div>`
@@ -1205,14 +1192,7 @@
     /* ── ACTIVE LINKS ────────────────────────────────────────── */
     const links    = document.querySelectorAll('.nav-links a');
     const sections = document.querySelectorAll('main section[id]');
-    new IntersectionObserver((entries) => {
-      entries.forEach((e) => {
-        if (e.isIntersecting) {
-          links.forEach((l) => l.classList.toggle('active', l.dataset.nav === e.target.id));
-        }
-      });
-    }, { rootMargin: '-40% 0px -45% 0px' }).observe
-    && sections.forEach((s) => {
+    sections.forEach((s) => {
       new IntersectionObserver((entries) => {
         entries.forEach((e) => {
           if (e.isIntersecting)
@@ -1242,37 +1222,27 @@
       });
     }, { threshold: 0.3 }).observe(document.getElementById('ventajas'));
 
-    /* ── FORMULARIO CONTACTO ────────────────────────────────── */
+    /* ── FORMULARIO CONTACTO ─────────────────────────────────── */
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
       const submitBtn = contactForm.querySelector('.contact-submit');
-      const statusEl = document.getElementById('contact-status');
-
+      const statusEl  = document.getElementById('contact-status');
       const setStatus = (type, message) => {
         statusEl.className = `contact-status ${type}`;
         statusEl.textContent = message;
       };
-
       contactForm.addEventListener('submit', async (event) => {
         event.preventDefault();
-
-        if (!contactForm.checkValidity()) {
-          contactForm.reportValidity();
-          return;
-        }
-
+        if (!contactForm.checkValidity()) { contactForm.reportValidity(); return; }
         submitBtn.disabled = true;
         submitBtn.classList.add('is-loading');
         setStatus('', '');
-
         try {
           const response = await fetch('https://api.web3forms.com/submit', {
-            method: 'POST',
-            headers: { Accept: 'application/json' },
+            method: 'POST', headers: { Accept: 'application/json' },
             body: new FormData(contactForm)
           });
           const data = await response.json();
-
           if (response.ok && data.success === true) {
             setStatus('success', 'Gracias. Tu mensaje fue enviado correctamente.');
             contactForm.reset();
@@ -1289,13 +1259,14 @@
     }
 
   </script>
+
   <a
     class="whatsapp-float"
-    href="https://wa.me/5219992644945?text=Hola%20quiero%20informaci%C3%B3n%20sobre%20tu%20servicio"
-    target="_blank"
-    rel="noopener noreferrer"
+    href="https://wa.me/5219992644945?text=Hola%2C%20quiero%20informaci%C3%B3n%20sobre%20EGIC%20para%20mi%20condominio"
+    target="_blank" rel="noopener noreferrer"
     onclick="if(window.gtag){gtag('event','whatsapp_click');}"
     aria-label="Hablar por WhatsApp"
   >WhatsApp</a>
+
 </body>
 </html>
