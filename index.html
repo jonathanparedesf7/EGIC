@@ -40,8 +40,8 @@
 
     /* ─── BASE ──────────────────────────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    html  { scroll-behavior: smooth; }
-    body  { font-family: "Lato", sans-serif; background: var(--white-warm); color: var(--black-deep); line-height: 1.6; }
+    html  { scroll-behavior: smooth; overflow-x: hidden; }
+    body  { font-family: "Lato", sans-serif; background: var(--white-warm); color: var(--black-deep); line-height: 1.6; overflow-x: hidden; }
     .container { width: min(1200px, 92vw); margin: 0 auto; }
     .section    { padding: 56px 0; position: relative; }
     .section-header { margin-bottom: 18px; }
@@ -290,7 +290,7 @@
       background: rgba(201,168,76,0.04);
     }
     .for-whom-icon { font-size: 20px; flex-shrink: 0; }
-    .for-whom-text { font-size: 16px; font-weight: 400; color: var(--white-pure); }
+    .for-whom-text { font-size: 16px; font-weight: 400; color: var(--gray-mid); }
     .for-whom-sub  { font-size: 13px; color: var(--gray-mid); font-weight: 300; }
 
     /* ─── PILLS ─────────────────────────────────────────────── */
@@ -310,7 +310,7 @@
       border: 1px solid var(--border-gold); border-left: 3px solid var(--gold-primary);
       background: var(--white-soft); padding: 12px 16px;
     }
-    .phase-row-num  { font-family: "Cormorant Garamond", serif; color: var(--gold-primary); font-size: 30px; font-weight: 300; line-height: 1; min-width: 20px; }
+    .phase-row-num  { font-family: "Cormorant Garamond", serif; color: var(--gold-primary); font-size: 30px; font-weight: 300; line-height: 1; min-width: 20px; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1, "tnum" 1; }
     .phase-row-name { font-family: "Lato", sans-serif; color: var(--black-deep); font-size: 16px; font-weight: 500; }
     .phase-row-time { color: var(--gold-muted); font-size: 13px; font-weight: 400; margin-top: 2px; }
 
@@ -466,20 +466,20 @@
     /* ─── MODAL ─────────────────────────────────────────────── */
     #modal-overlay {
       position: fixed; inset: 0; background: rgba(0,0,0,0.75);
-      z-index: 2000; display: flex; justify-content: flex-end; align-items: stretch;
+      z-index: 2000; display: flex; justify-content: flex-end;
       opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
     }
     #modal-overlay.active { opacity: 1; pointer-events: all; }
     #modal-panel {
       width: min(540px, 95vw); height: 100%;
       background: var(--black-soft); border-left: 2px solid var(--gold-primary);
-      padding: 48px 32px 40px; overflow-y: auto; overflow-x: hidden;
-      transform: translateX(100%); transition: transform 0.4s ease; position: relative;
-      box-sizing: border-box;
+      padding: 48px 32px 40px; overflow-y: auto;
+      transform: translateX(100%); transition: transform 0.4s ease;
+      position: relative;
     }
     #modal-overlay.active #modal-panel { transform: translateX(0); }
     #modal-close {
-      position: sticky; top: 18px; right: 22px; margin-left: auto; z-index: 2;
+      position: absolute; top: 18px; right: 22px;
       background: none; border: none; color: var(--gold-primary);
       font-size: 22px; cursor: pointer; transition: color 0.3s; line-height: 1;
     }
@@ -511,8 +511,8 @@
     .timeline { display: grid; gap: 12px; position: relative; }
     .timeline::before { content: ""; position: absolute; left: 16px; top: 0; bottom: 0; width: 1px; background: var(--gold-muted); opacity: 0.8; }
     .phase { position: relative; margin-left: 40px; border: 1px solid var(--border-gold); border-top: 2px solid var(--gold-primary); background: var(--white-soft); padding: 14px 12px; }
-    .phase-badge { width: 28px; height: 28px; border-radius: 50%; border: 1px solid var(--gold-primary); color: var(--gold-primary); font-size: 16px; display: inline-grid; place-items: center; font-family: "Cormorant Garamond", serif; position: absolute; left: -52px; top: 12px; background: var(--white-warm); }
-    .phase.active .phase-badge { background: var(--gold-primary); color: var(--black-deep); }
+    .phase-badge { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--gold-primary); color: var(--gold-primary); font-size: 20px; display: flex; align-items: center; justify-content: center; line-height: 1; font-family: "Cormorant Garamond", serif; font-weight: 600; font-variant-numeric: lining-nums; font-feature-settings: "lnum" 1, "tnum" 1; position: absolute; left: -52px; top: 10px; background: var(--white-warm); }
+    .phase.active .phase-badge { background: var(--white-warm); color: var(--gold-primary); border: 2px solid var(--gold-primary); }
     .phase h3 { font-family: "Lato", sans-serif; font-size: 17px; color: var(--black-deep); margin-bottom: 4px; font-weight: 500; }
     .phase-time { color: var(--gold-muted); font-size: 13px; margin-bottom: 6px; }
     .phase ul { list-style: none; display: grid; gap: 3px; }
@@ -564,15 +564,19 @@
       .nav-inner    { min-height: 62px; padding: 8px 0; gap: 11px; }
       .nav-brand strong { font-size: 22px; }
       .nav-brand span   { display: none; }
+      .nav-links a[data-nav="problema"] { display: none; }
+      .nav-links a[data-nav="ventajas"] { display: none; }
+      .nav-links a[data-nav="plan"]     { display: none; }
       .nav-links {
-        gap: 6px; flex-wrap: nowrap; overflow-x: auto;
-        -webkit-overflow-scrolling: touch; scrollbar-width: none;
-        padding-bottom: 2px; padding-right: 28px;
-        mask-image: linear-gradient(to right, black 75%, transparent 100%);
-        -webkit-mask-image: linear-gradient(to right, black 75%, transparent 100%);
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: visible;
+        gap: 12px;
+        mask-image: none;
+        -webkit-mask-image: none;
       }
       .nav-links::-webkit-scrollbar { display: none; }
-      .nav-links a  { font-size: 13px; letter-spacing: 0.7px; white-space: nowrap; }
+      .nav-links a  { font-size: 13px; letter-spacing: 0.8px; white-space: nowrap; }
       .kpi-star-grid { grid-template-columns: repeat(2, 1fr); }
       .partner-grid { grid-template-columns: 1fr; }
       .contact-direct { padding: 14px 12px; margin-bottom: 18px; }
@@ -587,21 +591,21 @@
       .contact-field textarea { font-size: 16px; padding: 12px; }
       .contact-field textarea { min-height: 120px; }
       .contact-submit { min-width: min(100%, 340px); min-height: 62px; font-size: 14px; letter-spacing: 3px; padding: 10px 16px; }
-      .who-strip-inner { gap: 12px 24px; }
+      .who-strip-inner { gap: 12px 24px; flex-direction: column; align-items: flex-start; }
+      .who-item { text-align: left; }
+      .who-item-label { letter-spacing: 2px; }
+      .who-item-value { white-space: normal; }
+      .who-item--zona,
+      .who-item--ahorro { display: none; }
       .who-sep { display: none; }
       .hero-desc { font-size: 16px; }
       .whatsapp-float { right: 12px; bottom: 12px; min-height: 48px; padding: 0 14px; font-size: 13px; }
-      #modal-overlay { justify-content: center; align-items: flex-end; }
-      #modal-panel {
-        width: 100vw; max-width: 100vw; height: 92vh; max-height: 92vh;
-        border-left: none; border-top: 2px solid var(--gold-primary);
-        border-radius: 18px 18px 0 0;
-        transform: translateY(100%);
-        padding: 56px 18px 32px;
-      }
-      #modal-overlay.active #modal-panel { transform: translateY(0); }
-      #modal-close { top: 12px; }
+      #modal-panel { padding: 40px 18px 32px; }
       .cta-block h2 { font-size: clamp(26px, 6vw, 38px); }
+    }
+
+    @media (max-width: 360px) {
+      .nav-links a { font-size: 11px; letter-spacing: 0.4px; }
     }
 
   </style>
@@ -655,28 +659,28 @@
   <!-- FRANJA DE CONTEXTO RÁPIDO -->
   <div class="who-strip">
     <div class="who-strip-inner">
-      <div class="who-item">
+      <div class="who-item who-item--empresa">
         <div>
           <div class="who-item-label">Empresa gestora</div>
           <div class="who-item-value">InnovArq · Arq. Mónica Oceguera</div>
         </div>
       </div>
       <div class="who-sep"></div>
-      <div class="who-item">
+      <div class="who-item who-item--zona">
         <div>
           <div class="who-item-label">Zona de operación</div>
           <div class="who-item-value">Yucatán y Campeche, México</div>
         </div>
       </div>
       <div class="who-sep"></div>
-      <div class="who-item">
+      <div class="who-item who-item--para">
         <div>
           <div class="who-item-label">Para quién</div>
           <div class="who-item-value">Desarrolladores · Juntas directivas · Condominios</div>
         </div>
       </div>
       <div class="who-sep"></div>
-      <div class="who-item">
+      <div class="who-item who-item--ahorro">
         <div>
           <div class="who-item-label">Ahorro estimado</div>
           <div class="who-item-value">15 – 25% en costos operativos</div>
